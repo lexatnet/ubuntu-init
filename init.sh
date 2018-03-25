@@ -3,6 +3,7 @@
 apt-get update
 apt-get install mc
 apt-get install goldendict
+apt-get install chromium-browser
 
 # setup tor-browser
 add-apt-repository ppa:webupd8team/tor-browser
