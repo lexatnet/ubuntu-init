@@ -2,8 +2,19 @@
 
 apt-get update
 apt-get install mc
-apt-get install goldendict
 apt-get install chromium-browser
+
+#install ssh server
+apt-get install openssh-server
+sudo service ssh status
+
+# install archive utils
+sudo apt-get install unzip
+sudo apt-get install p7zip-full
+
+#install goldendict
+apt-get install goldendict
+# TODO: extract dictionaries
 
 # setup tor-browser
 add-apt-repository ppa:webupd8team/tor-browser
@@ -44,3 +55,6 @@ usermod -aG docker $USER
 #install docker-compose
 sudo curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
+#install sqlite3
+apt-get install -y sqlite3
