@@ -4,6 +4,8 @@ apt update
 apt install git
 apt install mc
 apt install chromium-browser
+sudo apt install net-tools
+sudo apt install g++
 
 #install ssh server
 apt install openssh-server
@@ -73,3 +75,7 @@ apt install -y sqlite3
 #install VPN managers
 apt install openvpn network-manager-openvpn
 apt install openconnect network-manager-openconnect
+
+#install VirtualBox
+apt install virtualbox
+apt install virtualbox-ext-pack
