@@ -26,6 +26,10 @@ sed -i "s/HISTCONTROL=/HISTCONTROL=ignoreboth:erasedups #HISTCONTROL=/g" ~/.bash
 sed -i "s/HISTSIZE=/HISTSIZE=10000 #HISTSIZE=/g" ~/.bashrc
 sed -i "s/HISTFILESIZE=/HISTFILESIZE=10000 #HISTFILESIZE=/g" ~/.bashrc
 
+# disable terminal supress
+echo "stty -ixon" >> ~/.bashrc
+
+
 #install keepassx
 sudo add-apt-repository ppa:eugenesan/ppa
 apt update
