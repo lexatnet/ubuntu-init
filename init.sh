@@ -22,8 +22,11 @@ apt install p7zip-full
 
 #install goldendict
 apt install goldendict
-
-# TODO: extract dictionaries
+cd dicts
+mkdir ~/.dicts/
+ls *.tar.gz | xargs -I '{}' tar -zxvf {} --directory ~/.dicts/
+ls *.tar.bz2 | xargs -I '{}' tar -jxvf {} --directory ~/.dicts/
+ls *.zip | xargs -I '{}' unzip {} -d ~/.dicts/
 
 # setup tor-browser
 apt install torbrowser-launcher
@@ -31,7 +34,6 @@ apt install torbrowser-launcher
 sed -i "s/HISTCONTROL=/HISTCONTROL=ignoreboth:erasedups #HISTCONTROL=/g" ~/.bashrc
 sed -i "s/HISTSIZE=/HISTSIZE=10000 #HISTSIZE=/g" ~/.bashrc
 sed -i "s/HISTFILESIZE=/HISTFILESIZE=10000 #HISTFILESIZE=/g" ~/.bashrc
-echo "stty -ixon" >> ~/.bashrc
 
 # disable terminal supress
 echo "stty -ixon" >> ~/.bashrc
