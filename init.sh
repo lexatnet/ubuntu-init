@@ -2,6 +2,11 @@
 
 apt update
 apt install git
+cd /tmp
+git clone https://github.com/lexatnet/ubuntu-init.git
+cd ubuntu-init
+
+
 apt install mc
 apt install chromium-browser
 sudo apt install net-tools
@@ -17,6 +22,7 @@ apt install p7zip-full
 
 #install goldendict
 apt install goldendict
+
 # TODO: extract dictionaries
 
 # setup tor-browser
