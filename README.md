@@ -65,5 +65,5 @@ tested with Kubuntu 18.04
 run following command in console
 
 ``` bash
-wget -O - https://raw.githubusercontent.com/lexatnet/ubuntu-init/master/init.sh | bash
+wget -O - https://raw.githubusercontent.com/lexatnet/ubuntu-init/master/init.sh | sudo bash
 ```

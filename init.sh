@@ -1,27 +1,27 @@
 #!/bin/bash
 
 apt update
-apt install git
+apt install -y git
 cd /tmp
 git clone https://github.com/lexatnet/ubuntu-init.git
 cd ubuntu-init
 
 
-apt install mc
-apt install chromium-browser
-sudo apt install net-tools
-sudo apt install g++
+apt install -y  mc
+apt install -y chromium-browser
+apt install -y net-tools
+apt install -y g++
 
 #install ssh server
-apt install openssh-server
+apt install -y openssh-server
 service ssh status
 
 # install archive utils
-apt install unzip
-apt install p7zip-full
+apt install -y unzip
+apt install -y p7zip-full
 
 #install goldendict
-apt install goldendict
+apt install -y goldendict
 cd dicts
 mkdir ~/.dicts/
 ls *.tar.gz | xargs -I '{}' tar -zxvf {} --directory ~/.dicts/
@@ -29,7 +29,7 @@ ls *.tar.bz2 | xargs -I '{}' tar -jxvf {} --directory ~/.dicts/
 ls *.zip | xargs -I '{}' unzip {} -d ~/.dicts/
 
 # setup tor-browser
-apt install torbrowser-launcher
+apt install -y torbrowser-launcher
 
 sed -i "s/HISTCONTROL=/HISTCONTROL=ignoreboth:erasedups #HISTCONTROL=/g" ~/.bashrc
 sed -i "s/HISTSIZE=/HISTSIZE=10000 #HISTSIZE=/g" ~/.bashrc
@@ -40,9 +40,9 @@ echo "stty -ixon" >> ~/.bashrc
 
 
 #install keepassx
-sudo add-apt-repository ppa:eugenesan/ppa
+add-apt-repository ppa:eugenesan/ppa
 apt update
-sudo apt install keepassx
+apt install -y keepassx
 
 #install node
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
@@ -58,10 +58,10 @@ mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 rbenv install 2.5.0
 rbenv global 2.5.0
-gem install bundler
+gem install -y bundler
 
 # install docker
-apt-get install \
+apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -73,7 +73,7 @@ add-apt-repository \
    $(lsb_release -cs) \
    stable"
 apt update
-apt install docker-ce
+apt install -y docker-ce
 groupadd docker
 usermod -aG docker $USER
 
@@ -86,14 +86,14 @@ docker-compose --version
 apt install -y sqlite3
 
 #install VPN managers
-apt install openvpn network-manager-openvpn
-apt install openconnect network-manager-openconnect
+apt install -y openvpn network-manager-openvpn
+apt install -y openconnect network-manager-openconnect
 
 #install VirtualBox
-apt install virtualbox
-apt install virtualbox-ext-pack
+apt install -y virtualbox
+apt install -y virtualbox-ext-pack
 
 #install flash-player
-sudo add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
-sudo apt update
-sudo apt install adobe-flashplugin browser-plugin-freshplayer-pepperflash
+add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
+apt update
+apt install -y adobe-flashplugin browser-plugin-freshplayer-pepperflash
